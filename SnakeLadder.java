@@ -8,22 +8,29 @@ public class SnakeLadder {
 		int start_position_player1 = 0 ;
 		int dice = 0 ;
 		int option = 0 ;
-
-		dice = (int) ((Math.random() * 10) % 6 + 1);
-		System.out.println("dice value"+dice);
-		option = (int) ((Math.random() * 10) % 3 + 1);
-		System.out.println("option value"+option);
-		switch(option) {
-		case 1: //For no play
-			System.out.println("No moves");
-			break;
-		case 2: //For ladder
-			start_position_player1 = start_position_player1 + dice ;
-			break;
-		case 3: //For snake
-			start_position_player1 = start_position_player1 - dice ;
-			break;
+		while(start_position_player1!= 100)
+		{
+			dice = (int) ((Math.random() * 10) % 6 + 1);
+			System.out.println("dice value"+dice);
+			option = (int) ((Math.random() * 10) % 3 + 1);
+			System.out.println("option value"+option);
+			switch(option) {
+				case 1: //For no play
+					System.out.println("No moves");
+				break;
+				case 2: //For ladder
+					start_position_player1 = start_position_player1 + dice ;
+				break;
+				case 3: //For snake
+					start_position_player1 = start_position_player1 - dice ;
+					if(start_position_player1<0)
+					{
+						start_position_player1=0;
+					}
+					System.out.println(start_position_player1);
+				break;
 			}
+		}
 	}
 
 }
