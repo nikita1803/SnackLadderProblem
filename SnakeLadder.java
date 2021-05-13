@@ -3,10 +3,27 @@ package snakeLadder;
 public class SnakeLadder {
 	public static void main(String[] args) {
 		System.out.println("Welcome in snake and ladder simulation");
-		int start_position_player1 = 0 ;
-		int dice = (int) ((Math.random() * 10) % 6 + 1);
-		System.out.println(dice);
 		
+		
+		int start_position_player1 = 0 ;
+		int dice = 0 ;
+		int option = 0 ;
+
+		dice = (int) ((Math.random() * 10) % 6 + 1);
+		System.out.println("dice value"+dice);
+		option = (int) ((Math.random() * 10) % 3 + 1);
+		System.out.println("option value"+option);
+		switch(option) {
+		case 1: //For no play
+			System.out.println("No moves");
+			break;
+		case 2: //For ladder
+			start_position_player1 = start_position_player1 + dice ;
+			break;
+		case 3: //For snake
+			start_position_player1 = start_position_player1 - dice ;
+			break;
+			}
 	}
 
 }
