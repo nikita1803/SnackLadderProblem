@@ -8,10 +8,12 @@ public class SnakeLadder {
 		int start_position_player1 = 0 ;
 		int dice = 0 ;
 		int option = 0 ;
+		int count=0;
 		while(start_position_player1!= 100)
 		{
 			dice = (int) ((Math.random() * 10) % 6 + 1);
 			System.out.println("dice value"+dice);
+			count++;
 			option = (int) ((Math.random() * 10) % 3 + 1);
 			System.out.println("option value"+option);
 			switch(option) {
@@ -22,10 +24,9 @@ public class SnakeLadder {
 					start_position_player1 = start_position_player1 + dice ;
 					if(start_position_player1>100)
 					{
-						System.out.println("exceed");
 						start_position_player1 = start_position_player1 - dice ;
 					}
-					System.out.println(start_position_player1);
+					System.out.println("Position of the player" + start_position_player1);
 				break;
 				case 3: //For snake
 					start_position_player1 = start_position_player1 - dice ;
@@ -33,10 +34,11 @@ public class SnakeLadder {
 					{
 						start_position_player1=0;
 					}
-					System.out.println(start_position_player1);
+					System.out.println("Position of the player" + start_position_player1);
 				break;
 			}
 		}
+		System.out.println("dice role to win the game is " + count);
 	}
 
 }
