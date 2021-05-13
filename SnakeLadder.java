@@ -20,6 +20,12 @@ public class SnakeLadder {
 				break;
 				case 2: //For ladder
 					start_position_player1 = start_position_player1 + dice ;
+					if(start_position_player1>100)
+					{
+						System.out.println("exceed");
+						start_position_player1 = start_position_player1 - dice ;
+					}
+					System.out.println(start_position_player1);
 				break;
 				case 3: //For snake
 					start_position_player1 = start_position_player1 - dice ;
